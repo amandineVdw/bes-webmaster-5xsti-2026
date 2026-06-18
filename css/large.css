@@ -1,0 +1,134 @@
+/* =================================
+   LARGE — desktop 1025px et plus
+   S'applique via media="screen and (min-width: 1025px)"
+   Écrase medium.css à partir de 1025px.
+   =================================*/
+
+
+/* ---------------------------------
+   Variables — surcharger les valeurs tablette
+   --------------------------------- */
+:root { --padding-section: 5em 2em; }
+
+
+/* ---------------------------------
+   MICRO GRID — 12 colonnes
+   --------------------------------- */
+.grid { grid-template-columns: repeat(12, 1fr); }
+.grid > * { grid-column: 1 / -1; }
+
+.col-l-1  { grid-column: span 1; }
+.col-l-2  { grid-column: span 2; }
+.col-l-3  { grid-column: span 3; }
+.col-l-4  { grid-column: span 4; }
+.col-l-5  { grid-column: span 5; }
+.col-l-6  { grid-column: span 6; }
+.col-l-7  { grid-column: span 7; }
+.col-l-8  { grid-column: span 8; }
+.col-l-9  { grid-column: span 9; }
+.col-l-10 { grid-column: span 10; }
+.col-l-11 { grid-column: span 11; }
+.col-l-12 { grid-column: span 12; }
+
+.order-l-1 { order: 1; }
+.order-l-2 { order: 2; }
+.order-l-3 { order: 3; }
+.order-l-4 { order: 4; }
+
+
+/* ---------------------------------
+   HEADER desktop
+   ================================================
+   SUJET DEV — logo CENTRÉ + nav CENTRÉE
+   Décommenter ce bloc, commenter le bloc DES
+   ================================================ */
+header {
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5em 3em 0;
+  gap: 2em;
+}
+
+/* ================================================
+   SUJET DES — logo GAUCHE + nav DROITE
+   Décommenter ce bloc, commenter le bloc DEV
+   ================================================
+header {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2em 3em 0;
+  gap: 0;
+}
+*/
+
+#logo img { max-height: 80px; }
+
+nav#navprinc ul { gap: 2em; }
+nav#navprinc li a { font-size: 0.8em; }
+
+/* ================================================
+   SUJET DES — hover sur les liens nav (obligatoire)
+   Décommenter si sujet DES
+   ================================================
+nav#navprinc li a:hover {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.3em 0.8em;
+}
+*/
+
+/* Accroche hero desktop */
+#accroche { top: 50%; width: 70%; max-width: 700px; }
+#accroche p { font-size: 1.9em; }
+
+/* ================================================
+   SUJET DES — accroche 2 lignes (déjà centrée V+H)
+   Changer le contenu HTML : 2 lignes dans le <p>
+   ================================================ */
+
+
+/* ---------------------------------
+   Galerie desktop
+   --------------------------------- */
+#galerie img { height: 280px; }
+
+
+/* ---------------------------------
+   CTA desktop
+   --------------------------------- */
+#cta { min-height: 350px; }
+#cta h2 { font-size: 2em; }
+
+
+/* ---------------------------------
+   Split desktop
+   --------------------------------- */
+#split .grid { align-items: center; }
+#split figure img { height: 400px; }
+#split div { padding: 2em 3em; }
+
+
+/* ---------------------------------
+   Footer desktop
+   ================================
+   SUJET DEV — 3 colonnes : nav | social | newsletter
+   SUJET DES — centré : titre + texte + social
+   ================================ */
+footer .grid { max-width: var(--max-width); margin: auto; }
+
+/* ================================================
+   SUJET DES — footer centré (décommenter si DES)
+   ================================================
+footer { text-align: center; }
+#footerSocial ul { justify-content: center; }
+*/
+
+/* ================================================
+   SUJET DES — icônes OUTLINE dans contenu1 (fa-regular)
+   Rappel HTML : class="fa-regular fa-lightbulb"
+                 class="fa-regular fa-location-dot"
+                 class="fa-solid  fa-gear"
+   SUJET DEV — icônes SOLID (fa-solid) — défaut
+   ================================================ */

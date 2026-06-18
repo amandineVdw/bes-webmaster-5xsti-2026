@@ -1,0 +1,14 @@
+# Fichiers locaux
+.claude/
+.vscode/
+
+# Documentation — exclure tous les HTML sauf index
+*.html
+!index.html
+
+# Raccourcis Windows
+*.url
+
+# Dépendances locales
+fontawesome/
+CLAUDE.md

@@ -1,0 +1,91 @@
+/* ============================================================
+   docs-print.css
+   Surcouche light-mode pour AUDIT-EXAMEN, GUIDE, JOUR-J
+   Couvre les deux jeux de variables (--bg/--s1/--s2 et --surface/--surface2)
+   + les deux conventions de coloration syntaxique (.ct/.ca vs .c-tag/.c-attr)
+   ============================================================ */
+
+/* ---- Variables communes ---- */
+:root {
+  --bg        : #ffffff;
+  --s1        : #f6f8fa;
+  --s2        : #eaecef;
+  --surface   : #f6f8fa;
+  --surface2  : #eaecef;
+  --border    : #d0d7de;
+  --text      : #1f2328;
+  --muted     : #636c76;
+  --red       : #cf222e;
+  --yellow    : #9a6700;
+  --green     : #1a7f37;
+  --blue      : #0969da;
+  --purple    : #8250df;
+  --orange    : #bc4c00;
+  --code-bg   : #f6f8fa;
+}
+
+/* ---- Blocs de code ---- */
+pre {
+  background : #f6f8fa !important;
+  color      : #1f2328 !important;
+  border-color: #d0d7de !important;
+}
+pre code { color: inherit !important; }
+code {
+  color      : #0969da !important;
+  background : rgba(9,105,218,0.08) !important;
+}
+pre code { background: none !important; }
+
+/* ---- Coloration syntaxique — convention AUDIT-EXAMEN / JOUR-J ---- */
+.ct { color: #cf222e !important; }
+.ca { color: #9a6700 !important; }
+.cv { color: #1a7f37 !important; }
+.cc { color: #8c959f !important; font-style: italic; }
+.cp { color: #0969da !important; }
+.cs { color: #bc4c00 !important; }
+
+/* ---- Coloration syntaxique — convention GUIDE ---- */
+.c-tag  { color: #cf222e !important; }
+.c-attr { color: #9a6700 !important; }
+.c-val  { color: #1a7f37 !important; }
+.c-com  { color: #8c959f !important; font-style: italic; }
+.c-prop { color: #0969da !important; }
+.c-num  { color: #8250df !important; }
+.c-sel  { color: #bc4c00 !important; }
+
+/* ---- GUIDE — sidebar ---- */
+aside {
+  background   : var(--surface);
+  border-color : var(--border);
+}
+aside nav a { color: var(--muted); }
+aside nav a:hover { color: var(--text); background: var(--surface2); }
+
+/* ---- JOUR-J — cercles numérotés ---- */
+.ph-read   .phase-dot { background: rgba(9,105,218,0.08); }
+.ph-setup  .phase-dot { background: rgba(130,80,223,0.08); }
+.ph-html   .phase-dot { background: rgba(188,76,0,0.08); }
+.ph-css    .phase-dot { background: rgba(154,103,0,0.08); }
+.ph-resp   .phase-dot { background: rgba(26,127,55,0.08); }
+.ph-finish .phase-dot { background: rgba(207,34,46,0.08); }
+.ph-send   .phase-dot { background: var(--green); color: #fff; }
+
+/* ---- Liens ---- */
+a { color: #0969da; }
+
+/* ---- Impression papier ---- */
+@media print {
+  /* GUIDE — masquer la sidebar, contenu pleine largeur */
+  .layout { display: block; }
+  aside   { display: none; }
+  main    { max-width: 100%; padding: 2em; }
+
+  body    { font-size: 11px; }
+  .wrap   { padding: 1em; }
+
+  /* Éviter les coupures de page au milieu d'un bloc */
+  .section,
+  .phase,
+  section { page-break-inside: avoid; }
+}

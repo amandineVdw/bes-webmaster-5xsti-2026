@@ -1,0 +1,30 @@
+/* =================================
+   MICRO GRID — système col-* mobile-first
+   Base : 4 colonnes (mobile)
+   medium.css → 8 colonnes + col-m-*
+   large.css  → 12 colonnes + col-l-*
+   =================================*/
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap, 1.5em);
+  width: 100%;
+  max-width: var(--max-width, 1200px);
+  margin: auto;
+}
+
+/* Tous les enfants pleine largeur par défaut (mobile
+) */
+.grid > * { grid-column: 1 / -1; }
+
+
+/* ---------------------------------
+   Variantes gap
+   --------------------------------- */
+.grid-gap-0  { gap: 0; }
+.grid-gap-sm { gap: 0.5em; }
+.grid-gap-lg { gap: 3em; }
+
+/* Sort du max-width */
+.grid-full { max-width: 100%; }

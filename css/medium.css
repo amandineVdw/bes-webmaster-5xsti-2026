@@ -1,0 +1,119 @@
+/* =================================
+   MEDIUM — tablette 681px et plus
+   S'applique via media="screen and (min-width: 681px)"
+   Écrase small.css à partir de 681px.
+   =================================*/
+
+
+/* ---------------------------------
+   Variables — surcharger les valeurs mobile
+   --------------------------------- */
+:root { --padding-section: 4em 2em; }
+
+
+/* ---------------------------------
+   MICRO GRID — 8 colonnes
+   --------------------------------- */
+.grid { grid-template-columns: repeat(8, 1fr); }
+.grid > * { grid-column: 1 / -1; }
+
+.col-m-1 { grid-column: span 1; }
+.col-m-2 { grid-column: span 2; }
+.col-m-3 { grid-column: span 3; }
+.col-m-4 { grid-column: span 4; }
+.col-m-5 { grid-column: span 5; }
+.col-m-6 { grid-column: span 6; }
+.col-m-7 { grid-column: span 7; }
+.col-m-8 { grid-column: span 8; }
+
+.order-m-1 { order: 1; }
+.order-m-2 { order: 2; }
+.order-m-3 { order: 3; }
+.order-m-4 { order: 4; }
+
+
+/* ---------------------------------
+   HEADER tablette — nav horizontale
+   ================================================
+   SUJET DEV — logo centré + nav centrée (défaut)
+   SUJET DES — logo gauche + nav droite (décommenter)
+   ================================================ */
+header {
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2em;
+  gap: 1.5em;
+}
+
+/* ================================================
+   SUJET DES — logo gauche + nav droite tablette (décommenter)
+   ================================================
+header {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2em 2em 0;
+  gap: 0;
+}
+*/
+
+#logo { margin-top: 0; }
+#logo img { max-height: 70px; }
+
+/* Nav tablette — horizontale (les 2 sujets) */
+nav#navprinc { margin-top: 0; width: auto; }
+nav#navprinc ul {
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1.5em;
+}
+nav#navprinc li a { font-size: 0.85em; }
+
+/* ================================================
+   SUJET DES — hover sur les liens nav tablette (décommenter)
+   ================================================
+nav#navprinc li a {
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+nav#navprinc li a:hover {
+  letter-spacing: 0.15em;
+}
+*/
+
+/* CTA nav — visible tablette (surtout sujet DES) */
+#navCta { display: inline-block; }
+
+/* Accroche hero tablette */
+#accroche { top: 55%; width: 75%; }
+#accroche p { font-size: 1.6em; }
+
+
+/* ---------------------------------
+   Galerie tablette
+   --------------------------------- */
+#galerie img { height: 220px; }
+
+
+/* ---------------------------------
+   Split tablette
+   --------------------------------- */
+#split figure img { height: 300px; }
+
+
+/* ---------------------------------
+   Footer tablette
+   ================================================
+   SUJET DEV — newsletter en ligne (défaut)
+   SUJET DES — footer centré (décommenter)
+   ================================================ */
+#footerNewsletter form { flex-flow: row wrap; align-items: flex-end; }
+#footerNewsletter input[type="email"] { width: 240px; }
+#footerTexte { margin-top: 0; }
+
+/* ================================================
+   SUJET DES — footer centré tablette (décommenter)
+   ================================================
+footer              { text-align: center; }
+nav#navfootersocial ul { justify-content: center; }
+*/

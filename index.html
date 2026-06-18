@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr-be">
+<head>
+
+<!-- ------------ FAVICONE ---------------- -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<!-- Généré par http://realfavicongenerator.net/ -->
+
+<title>Titre du site</title>
+
+<!-- ------------ META ---------------- -->
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Amandine Van de Winckel">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ------------ STYLES — mobile-first ---------------- -->
+<link rel="stylesheet" href="css/reset.css"  type="text/css" media="screen">
+<link rel="stylesheet" href="css/grid.css"   type="text/css" media="screen">
+<link rel="stylesheet" href="css/small.css"  type="text/css" media="screen">
+<link rel="stylesheet" href="css/medium.css" type="text/css" media="screen and (min-width: 681px)">
+<link rel="stylesheet" href="css/large.css"  type="text/css" media="screen and (min-width: 1025px)">
+<link rel="stylesheet" href="css/print.css"  type="text/css" media="print">
+<!-- ------------ FIN STYLES ---------------- -->
+
+<!-- ------------ FONTAWESOME — CDN ---------------- -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" type="text/css" media="screen">
+
+</head>
+<body>
+
+<a href="#content" class="skip-link">Aller au contenu</a>
+
+<!-- début CONTAINER -->
+<div id="wrapper">
+
+
+  <!-- ============================================================
+       HEADER — hero plein écran
+       Image de fond + logo + nav + accroche + CTA
+       ============================================================ -->
+  <!-- début HEADER -->
+  <header id="haut" role="banner">
+
+    <div id="logo">
+      <a href="#haut"><img src="images/logo-blanc.png" alt="Logo du site"></a>
+    </div>
+
+    <!-- début NAV -->
+    <nav id="navprinc" role="navigation" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#contenu1" aria-current="page">Section 1</a></li>
+        <li><a href="#contenu2">Section 2</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#bas">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- CTA nav — présent dans sujet DES, supprimer si inutile -->
+    <a href="#contenu1" id="navCta" class="btn">Découvrir</a>
+    <!-- fin NAV -->
+
+    <!-- Accroche hero — centré V+H via CSS -->
+    <div id="accroche">
+      <p>Accroche principale — une ou deux lignes</p>
+      <a href="#contenu1" class="btn">Voir plus</a>
+    </div>
+
+  </header>
+  <!-- fin HEADER -->
+
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <!-- début CONTENT -->
+  <main id="content" role="main">
+
+
+    <!-- ============================================================
+         CONTENU 1 — 3 blocs icônes
+         Commun aux 2 sujets (photographes + vêtements)
+         Sujet DEV : animation au chargement sur les icônes
+         ============================================================ -->
+    <!-- début CONTENU1 -->
+    <section id="contenu1">
+      <div class="grid">
+
+        <article class="col-m-4 col-l-4">
+          <i class="fa-solid fa-star" aria-hidden="true"></i>
+          <h2>Titre</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+
+        <article class="col-m-4 col-l-4">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+          <h2>Titre</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+
+        <article class="col-m-8 col-l-4">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <h2>Titre</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+
+      </div>
+      <!-- Accroche sous les 3 blocs — sujet DES -->
+      <p class="accroche-section">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec.</p>
+    </section>
+    <!-- fin CONTENU1 -->
+
+
+    <!-- ============================================================
+         GALERIE — images principales
+         Sujet DEV : photographes (6 images en grille)
+         Sujet DES : 3 images mises en avant
+         ============================================================ -->
+    <!-- début GALERIE -->
+    <section id="galerie">
+      <div class="grid">
+
+        <figure class="col-m-4 col-l-4">
+          <img src="images/contenu1.jpg" alt="Description de l'image 1">
+          <figcaption>Titre — Lorem ipsum</figcaption>
+        </figure>
+
+        <figure class="col-m-4 col-l-4">
+          <img src="images/contenu2.jpg" alt="Description de l'image 2">
+          <figcaption>Titre — Lorem ipsum</figcaption>
+        </figure>
+
+        <figure class="col-m-8 col-l-4">
+          <img src="images/contenu3.jpg" alt="Description de l'image 3">
+          <figcaption>Titre — Lorem ipsum</figcaption>
+        </figure>
+
+      </div>
+    </section>
+    <!-- fin GALERIE -->
+
+
+    <!-- ============================================================
+         CALL TO ACTION — image de fond + titre + bouton
+         Sujet DEV uniquement — supprimer pour sujet DES
+         ============================================================ -->
+    <!-- début CTA -->
+    <section id="cta">
+      <h2>Titre de la section call to action</h2>
+      <a href="#bas" class="btn">En savoir plus</a>
+    </section>
+    <!-- fin CTA -->
+
+
+    <!-- ============================================================
+         CONTENU 2 — 6 blocs icônes avec hover
+         Sujet DEV uniquement — supprimer pour sujet DES
+         ============================================================ -->
+    <!-- début CONTENU2 -->
+    <section id="contenu2">
+      <div class="grid">
+
+        <article class="col-m-4 col-l-2">
+          <i class="fa-solid fa-camera" aria-hidden="true"></i>
+          <h3>Titre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+
+        <article class="col-m-4 col-l-2">
+          <i class="fa-solid fa-palette" aria-hidden="true"></i>
+          <h3>Titre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+
+        <article class="col-m-4 col-l-2">
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <h3>Titre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+
+        <article class="col-m-4 col-l-2">
+          <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+          <h3>Titre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+
+        <article class="col-m-4 col-l-2">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <h3>Titre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+
+        <article class="col-m-4 col-l-2">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          <h3>Titre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+
+      </div>
+    </section>
+    <!-- fin CONTENU2 -->
+
+
+    <!-- ============================================================
+         SPLIT — image + texte + CTA
+         Sujet DES uniquement — supprimer pour sujet DEV
+         Inverser ordre desktop : ajouter order-l-2 / order-l-1
+         ============================================================ -->
+    <!-- début SPLIT -->
+    <section id="split">
+      <div class="grid">
+
+        <figure class="col-m-8 col-l-6">
+          <img src="images/contenu1.jpg" alt="Description de l'image">
+        </figure>
+
+        <div class="col-m-8 col-l-6">
+          <h2>Titre de la section</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec diam vitae nisl dignissim convallis.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+
+      </div>
+    </section>
+    <!-- fin SPLIT -->
+
+
+  </main>
+  <!-- fin CONTENT -->
+
+
+  <!-- ============================================================
+       FOOTER
+       Sujet DEV  : newsletter form + social icons
+       Sujet DES  : titre + texte + social icons (supprimer form)
+       ============================================================ -->
+  <!-- début FOOTER -->
+  <footer id="bas">
+    <div class="grid">
+
+      <!-- Newsletter — sujet DEV, supprimer pour sujet DES -->
+      <div id="footerNewsletter" class="col-m-4 col-l-6">
+        <h3>Newsletter</h3>
+        <form action="#" method="post">
+          <div>
+            <label for="emailNewsletter">Email :</label>
+            <input type="email" id="emailNewsletter" name="email" placeholder="votre@email.com" required>
+          </div>
+          <div>
+            <input type="submit" value="S'abonner" class="btn">
+          </div>
+        </form>
+      </div>
+
+      <!-- Texte footer — sujet DES, adapter pour sujet DEV -->
+      <div id="footerTexte" class="col-m-4 col-l-6">
+        <h3>Titre footer</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <!-- Réseaux sociaux — commun aux 2 sujets (min 3 icônes) -->
+      <div id="footerSocial" class="col-m-8 col-l-12">
+        <nav id="navfootersocial" role="navigation" aria-label="Réseaux sociaux">
+          <ul>
+            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <p role="contentinfo">Mentions légales | &copy; 2026</p>
+
+  </footer>
+  <!-- fin FOOTER -->
+
+
+</div>
+<!-- fin CONTAINER -->
+
+</body>
+</html>

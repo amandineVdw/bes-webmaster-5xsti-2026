@@ -1,0 +1,458 @@
+/* =================================
+   SMALL — base mobile (toujours chargé)
+   Tout ce fichier s'applique à tous les écrans.
+   medium.css écrase à partir de 681px.
+   large.css écrase à partir de 1025px.
+   =================================*/
+
+
+/* =================================
+   POLICES IMPORTEES
+   ================================================
+   Remplacer la famille par la police du sujet.
+   Garder display=swap pour tous les navigateurs.
+   ================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+
+/* =================================
+   VARIABLES — modifier ici pour thèmer
+   =================================*/
+:root {
+  --color-primary  : #2c3e50;
+  --color-accent   : #3498db;
+  --color-bg       : #ffffff;
+  --color-light    : #f8f9fa;
+  --color-text     : #333333;
+  --color-border   : #e0e0e0;
+  --font-main      : 'Inter', sans-serif;
+  --max-width      : 1200px;
+  --gap            : 1.5em;
+  --padding-section: 3em 1.2em;
+  --header-height  : 100vh;
+}
+
+
+/* =================================
+   GENERAL
+   =================================*/
+html { scroll-behavior: smooth; min-width: 320px; }
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1, h2, h3 { line-height: 1.2; color: var(--color-primary); }
+p { line-height: 1.7; margin-bottom: 1em; }
+
+
+/* =================================
+   WRAPPER — macro grid
+   =================================*/
+#wrapper {
+  display: grid;
+  min-height: 100vh;
+  gap: 0;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header { grid-area: header; }
+main   { grid-area: main;   }
+footer { grid-area: footer; }
+
+
+/* =================================
+   SKIP LINK — accessibilité
+   =================================*/
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5em 1em;
+  z-index: 9999;
+}
+.skip-link:focus { left: 0; }
+
+
+/* =================================
+   HEADER — hero plein écran (mobile)
+   SANS bouton hamburger — nav toujours visible
+   =================================*/
+header {
+  position: relative;
+  min-height: var(--header-height);
+  background: url('../images/header.jpg') center center / cover no-repeat;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Overlay sombre */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+header > * { position: relative; z-index: 1; }
+
+
+/* ---------------------------------
+   Logo mobile
+   ================================================
+   SUJET DEV — logo centré (défaut, rien à changer)
+   SUJET DES — logo gauche : décommenter ci-dessous
+   ================================================ */
+#logo {
+  margin-top: 2em;
+  text-align: center;
+}
+#logo img { max-height: 60px; margin: auto; }
+#logo a   { color: #fff; font-weight: 600; font-size: 1.4em; }
+
+/* ================================================
+   SUJET DES — logo gauche mobile (décommenter)
+   ================================================
+#logo {
+  margin-top: 2em;
+  text-align: left;
+  width: 100%;
+  padding-left: 1.5em;
+}
+#logo img { margin: 0; }
+*/
+
+
+/* ---------------------------------
+   Nav mobile — verticale, toujours visible
+   SANS hamburger (les 2 sujets l'interdisent)
+   --------------------------------- */
+nav#navprinc {
+  margin-top: 1.5em;
+  width: 100%;
+}
+nav#navprinc ul {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1em;
+  list-style: none;
+}
+nav#navprinc li a {
+  color: #fff;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+}
+nav#navprinc li a:hover,
+nav#navprinc li a[aria-current="page"] { color: var(--color-accent); }
+
+/* CTA nav — masqué mobile (visible tablette+ via medium.css) */
+#navCta { display: none; }
+
+
+/* ---------------------------------
+   Accroche hero mobile — centrée V+H
+   ================================================
+   SUJET DEV — 1 ligne + bouton CTA animé (défaut)
+   SUJET DES — 2 lignes, pas de bouton CTA (décommenter)
+   ================================================ */
+#accroche {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  width: 88%;
+}
+#accroche p {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1.2em;
+}
+
+/* SUJET DEV — animation sur le bouton CTA au chargement
+   Pulse glow : le bouton attire l'oeil sans bouger le layout */
+#accroche .btn {
+  animation: ctaPulse 2s 0.5s ease infinite;
+}
+
+/* ================================================
+   SUJET DES — masquer le bouton CTA du hero (décommenter)
+   ================================================
+#accroche .btn { display: none; }
+*/
+
+
+/* =================================
+   MAIN — sections
+   =================================*/
+main section { padding: var(--padding-section); }
+
+main section:nth-of-type(even) { background: var(--color-light); }
+
+
+/* ---------------------------------
+   CONTENU 1
+   ================================================
+   SUJET DEV — image + titre + texte (pas d'animation icônes)
+   SUJET DES — icônes animées au chargement (décommenter)
+   ================================================ */
+#contenu1 article {
+  text-align: center;
+  padding: 1.5em 1em;
+}
+#contenu1 article i {
+  font-size: 2.5em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 0.5em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* ================================================
+   SUJET DES — animation icônes au chargement (décommenter)
+   ================================================
+#contenu1 article:nth-of-type(1) i { animation: fadeInUp 0.6s 0s   ease both; }
+#contenu1 article:nth-of-type(2) i { animation: fadeInUp 0.6s 0.2s ease both; }
+#contenu1 article:nth-of-type(3) i { animation: fadeInUp 0.6s 0.4s ease both; }
+*/
+
+.accroche-section {
+  text-align: center;
+  max-width: 600px;
+  margin: 1.5em auto 0;
+}
+
+
+/* ---------------------------------
+   GALERIE
+   ================================================
+   SUJET DEV — 6 photos (3×2), hover NB→couleur
+   SUJET DES — 3 images mises en avant, hover NB→couleur
+   Même CSS pour les deux — adapter le nombre de <figure> en HTML
+   ================================================ */
+#galerie figure { overflow: hidden; }
+
+#galerie img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+#galerie img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+#galerie figcaption {
+  padding: 0.8em 0;
+  font-size: 0.85em;
+  color: #666;
+}
+
+
+/* ---------------------------------
+   CTA — image de fond + titre + bouton
+   SUJET DEV uniquement
+   Supprimer la section #cta en HTML si sujet DES
+   --------------------------------- */
+#cta {
+  min-height: 250px;
+  background: url('../images/call-to-action.jpg') center center / cover no-repeat;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 3em 1.5em;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+#cta > * { position: relative; z-index: 1; }
+#cta h2  { color: #fff; font-size: 1.4em; margin-bottom: 1em; }
+
+
+/* ---------------------------------
+   CONTENU 2 — 6 icônes avec hover
+   SUJET DEV uniquement
+   Supprimer la section #contenu2 en HTML si sujet DES
+   --------------------------------- */
+#contenu2 article {
+  text-align: center;
+  padding: 1.5em 1em;
+}
+#contenu2 article i {
+  font-size: 2em;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.5em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#contenu2 article:hover i {
+  color: var(--color-accent);
+  transform: scale(1.2) rotate(5deg);
+}
+
+
+/* ---------------------------------
+   SPLIT — image + texte + CTA
+   SUJET DES uniquement
+   Supprimer la section #split en HTML si sujet DEV
+   --------------------------------- */
+#split figure img { width: 100%; height: 220px; object-fit: cover; }
+#split div        { padding: 1.5em 0; }
+#split h2         { margin-bottom: 1em; }
+
+
+/* =================================
+   FOOTER
+   ================================================
+   SUJET DEV — newsletter + social (défaut)
+   SUJET DES — titre + texte + social centré (décommenter)
+   ================================================ */
+footer {
+  background: var(--color-primary);
+  color: #ccc;
+  padding: 3em 1.5em 1.5em;
+}
+
+footer h3 { color: #fff; margin-bottom: 1em; }
+
+/* Newsletter — SUJET DEV */
+#footerNewsletter form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.8em;
+}
+#footerNewsletter label {
+  display: block;
+  font-size: 0.85em;
+  margin-bottom: 0.3em;
+  color: #aaa;
+}
+#footerNewsletter input[type="email"] {
+  width: 100%;
+  padding: 0.6em 1em;
+  border: 1px solid #555;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.9em;
+}
+#footerNewsletter input[type="email"]::placeholder { color: #888; }
+
+/* Texte footer — SUJET DES */
+#footerTexte    { margin-top: 2em; }
+#footerTexte p  { color: #aaa; }
+
+/* ================================================
+   SUJET DES — footer centré mobile (décommenter)
+   ================================================
+footer         { text-align: center; }
+#footerTexte   { margin-top: 0; }
+*/
+
+/* Réseaux sociaux */
+nav#navfootersocial ul {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.2em;
+  list-style: none;
+  margin-top: 1.5em;
+}
+nav#navfootersocial li a {
+  color: #aaa;
+  font-size: 1.4em;
+  transition: color 0.3s ease;
+}
+nav#navfootersocial li a:hover { color: var(--color-accent); }
+
+/* ================================================
+   SUJET DES — social centré mobile (décommenter)
+   ================================================
+nav#navfootersocial ul { justify-content: center; }
+*/
+
+/* Mentions légales */
+p[role="contentinfo"] {
+  font-size: 0.75em;
+  color: #666;
+  text-align: center;
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid #444;
+}
+
+
+/* =================================
+   COMPOSANTS
+   =================================*/
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.75em 2em;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--color-primary); color: #fff; }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+}
+.btn-outline:hover { background: var(--color-accent); color: #fff; }
+
+label:has(+ :required)::before { content: '* '; color: var(--color-accent); }
+
+
+/* =================================
+   ANIMATIONS
+   =================================*/
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Pulse glow — CTA hero sujet DEV
+   Box-shadow qui respire en boucle, rien vu en classe */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+  50%       { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0); }
+}

@@ -1,0 +1,20 @@
+/* =================================
+   PRINT
+   =================================*/
+@page { margin: 2cm; }
+
+header nav, footer, .btn, #navCta { display: none; }
+
+body {
+  display: block;
+  font-size: 12pt;
+  color: #000;
+  background: #fff;
+}
+
+main section, main article { padding: 1em 0; }
+
+.grid { display: block; }
+.grid > * { margin-bottom: 1em; }
+
+a[href]::after { content: " (" attr(href) ")"; font-size: 10pt; color: #666; }

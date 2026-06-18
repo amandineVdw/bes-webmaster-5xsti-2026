@@ -1,0 +1,51 @@
+/* =================================
+   RESET
+   =================================*/
+
+/* Box-sizing universel */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Suppression marges/paddings */
+* { margin: 0; padding: 0; }
+
+/* Base HTML */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Base body */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Médias — jamais de débordement */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Typographie — texte long ne déborde pas */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Formulaires — héritent la police du body */
+input, button, textarea, select {
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Textarea — hauteur minimale */
+textarea { min-height: 80px; }
+
+/* Listes */
+ul, ol { list-style: none; }
+
+/* Liens */
+a { text-decoration: none; color: inherit; }
